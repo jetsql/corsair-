@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飛躍海盜</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body style="background-color: lightblue;">
+    <div class="container">
+        <div class="row" style="padding:100px 100px 100px 100px"></div>
+        <div class="row">
+            <div class="col-lg-1" >
+                <!--<img src="./Olaf.png" style="width: 300px;"/>-->
+            </div>
+            <div class="col-lg-10">
+                <div id="border"></div>
+                <div id="messageArea"></div>
+                <div class="table-responsive"></div>
+                <table class="table table-white">
+                    <tr>
+                        <td >01</td>
+                        <td >02</td>
+                        <td >03</td>
+                        <td >04</td>
+                        <td >05</td>
+
+                    </tr>
+                    <tr>
+                        <td >06</td>
+                        <td >07</td>
+                        <td >08</td>
+                        <td >09</td>
+                        <td >10</td>
+
+                    </tr>
+                    <tr>
+                        <td >11</td>
+                        <td >12</td>
+                        <td>13</td>
+                        <td >14</td>
+                        <td >15</td>
+
+                    </tr>
+                    <tr>
+                        <td >16</td>
+                        <td >17</td>
+                        <td >18</td>
+                        <td >19</td>
+                        <td >20</td>
+
+                    </tr>
+                    <tr>
+                        <td >21</td>
+                        <td >22</td>
+                        <td >23</td>
+                        <td >24</td>
+                        <td >25</td>
+
+                    </tr>
+                  
+                </table>
+            </div>
+            <div class="col-lg-1">
+                <p id="1226"></p>
+                <img src="./Olaf.png"  style="width: 300px;"/>
+            </div>
+        </div>
+
+    </div>
+  
+    <script>
+        var x =Math.floor(Math.random() * 25)+1;
+        $("#1226").text(x);  //方便測試
+        
+        $("td").click(function(){
+            if($(this).text()==x){
+                $(this).text("hit");
+                $(this).addClass("hit");
+                //雲教授執行CODE
+                var d2 = ui.get("socket d2");  
+                cpf.set("socket d2", d2);
+                cpf.repeat();
+                
+                setTimeout(function(){ var r = confirm("恭喜！回合結束");
+                if (r == true) {
+                    window.location.reload();           } 
+            }, 200);
+                 
+            }else{
+                $(this).text("miss");
+                $(this).addClass("miss");
+            }
+  });
+    
+    </script>
+
+
+
+</body>
+
+</html>
